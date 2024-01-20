@@ -1,6 +1,7 @@
-{{
-  "engines": {"node":"20.9.0"}
-},
+{
+  "engines": {
+    "node": "20.9.0"
+  },
   "name": "wonder_land",
   "version": "1.0.0",
   "description": "",
