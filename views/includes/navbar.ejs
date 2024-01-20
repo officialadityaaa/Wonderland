@@ -1,0 +1,61 @@
+<style>
+  .navbar-collapse.show {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    top: 100%; /* This will position the dropdown right below the navbar */
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/listing">
+    <h1 class="text-light fw-bold mb-0"><i class="fa fa-home" aria-hidden="true"></i>   Wonder<span class="text-warning">Land</span></h1>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/listing">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/listing">All Listings</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/listing/create">Add new Listings</a>
+      </li>
+      <div class="navbar-nav ms-auto">
+        <form id="searchForm">
+            <div class="search-container">
+                <input type="text" id="searchInput" name="searchInput" placeholder="Search here...">
+                <div class="suggestions-dropdown" id="suggestions"></div>
+            </div>
+          
+        </form>
+
+    </div>
+
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <% if (!datauser) { %> 
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Log In</a>
+        </li>
+      <% } %>
+      <% if (datauser) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log out</a>
+        </li>
+      <% } %>
+    </ul>
+    
+  </div>
+</nav>
+'
+'

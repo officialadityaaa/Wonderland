@@ -1,0 +1,114 @@
+
+<% layout("/layouts/boiler.ejs") %>
+<body>
+  <div class="" id="filters">
+
+    <div class="filter-wrapper">
+
+
+      <div class="filter" onclick="filterByType('Rooms')">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Rooms')">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Rooms</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Iconic Cities')">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic Cities</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Mountain')">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        <p>Mountain</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Castles')">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>Castles</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Amazing pools')">
+        <div><i class="fa-solid fa-person-swimming"></i></div>
+        <p>Amazing pools</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Farms')">
+        <div><i class="fa-solid fa-cow"></i></div>
+        <p>Farms</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Camping')">
+        <div><i class="fa-solid fa-tents"></i></div>
+        <p>Camping</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Arctic')">
+        <div><i class="fa-regular fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Beach')">
+        <div><i class="fa-solid fa-umbrella-beach"></i></div>
+        <p>Beach</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Arctic')">
+        <div><i class="fa-regular fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </div>
+
+      <div class="filter" onclick="filterByType('Beach')">
+        <div><i class="fa-solid fa-umbrella-beach"></i></div>
+        <p>Beach</p>
+      </div>
+
+
+
+
+    </div>
+
+
+    <div><button id="filterButton"><i class="fa-solid fa-arrow-down-wide-short"></i> Filters</button></div>
+    <!-- Filter popup -->
+    <div class="filter-popup" id="filterPopup">
+      <div class="filter-content" id="filterContent">
+        <!-- Location options with checkboxes will be displayed here -->
+      </div>
+      <button id="submitFilter">Submit</button>
+    </div>
+
+
+
+    
+  </div>
+
+
+  <!-- <h2>Listings of Wonder_Land</h2> -->
+
+<!-- comes using flash -->
+  <div class="container  mt-4">
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+      <% for (let i of datalist) { %>
+        <div class="col">
+          <div class="box row">
+            <a href="listing/<%= i._id %>" class="li-link">
+              <div class="listing-card col" style="width: 17rem;">
+                <img class="card-img-top" src="<%= i.image.url %>" alt="Card image cap" style="height: 20rem;" />
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                  <h3 class="card-title"><%= i.title %></h3>
+                  <p class="card-text"><b>Price- &#8377 <%= i.price.toLocaleString("en-IN") %>/Night</b></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+</body>

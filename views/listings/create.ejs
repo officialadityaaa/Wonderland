@@ -1,0 +1,69 @@
+<% layout("/layouts/boiler.ejs") %>
+
+<body>
+  <div class="row">
+    <!-- //offset left se distance -->
+
+    <div class="col-8 offset-2 mt-5">
+      <h1 class="text-center det">Create Listing</h1>
+      <!-- no validate is useed to provide default styling like the bootstrap to take down while required -->
+      <form action="/listing/create" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title" class="form-label;">Title</label>
+          <input type="text" name="listing[title]" id="title" placeholder="Enter Title" class="form-control" required />
+          <div class="valid-feedback">Title Looks Good</div>
+          <div class="invalid-feedback">Please fill the Title name</div>
+        </div>
+        <!--margin from bottom-->
+        <div class="mb-3">
+          <label for="Location" class="form-label;">Location</label>
+          <input type="text" name="listing[location]" id="location" placeholder="Enter_location" class="form-control" required />
+          <div class="valid-feedback">Location Looks Good</div>
+          <div class="invalid-feedback">Please fill the Location name</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="Description" class="form-label;">Description</label>
+          <textarea
+            name="listing[description]"
+            id="description"
+            placeholder="Enter description"
+            class="form-control"
+            required
+          ></textarea>     
+           <div class="valid-feedback">Description Looks Good</div>
+          <div class="invalid-feedback">Please fill the Description name</div>
+
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="Country" class="form-label;">Country</label>
+            <input type="text" name="listing[country]" id="country" placeholder="Enter country" class="form-control" required />
+            <div class="valid-feedback">Country Looks Good</div>
+            <div class="invalid-feedback">Please fill the country name</div>
+          </div>
+
+          <!-- default text hi hota hein -->
+          <div class="mb-3 col-md-8">
+            <label for="Price" class="form-label;">Price</label>
+            <input name="listing[price]" id="price" placeholder="Enter price" class="form-control" required />
+            <div class="valid-feedback">Price Looks Good</div>
+            <div class="invalid-feedback">Please fill the price name</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="Image" class="form-label;">Image</label>
+          <input type="file" name="listing[image]" id="image"class="form-control" required />
+          <div class="valid-feedback">Image Looks Good</div>
+          <div class="invalid-feedback">Please fill the Image Link  name</div>
+        </div>
+
+        <button type="submit" class="btn btn-dark mb-4">ADD</button>
+      </form>
+    </div>
+  </div>
+  <% layout("/layouts/boiler.ejs") %>
+</body>
+</html>
