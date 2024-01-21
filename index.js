@@ -36,7 +36,7 @@ async function main() {
     await mongoose.connect(process.env.atlaslink, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      retryWrites: true,
+      retryWrites: 5000,
     });
 
     // Other code that depends on the successful connection
