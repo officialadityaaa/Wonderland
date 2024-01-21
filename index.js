@@ -33,13 +33,18 @@ app.use(flash());
 
 async function main() {
   try {
-      await mongoose.connect(process.env.atlaslink, {
-          retryWrites: true,
-      });
+    await mongoose.connect(process.env.atlaslink, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      retryWrites: true,
+    });
+
+    // Other code that depends on the successful connection
   } catch (error) {
-      console.error('Error connecting to the database:', error);
+    console.error('Error connecting to the database:', error);
   }
 }
+
 main();
 
 const store = MongoStore.create({
