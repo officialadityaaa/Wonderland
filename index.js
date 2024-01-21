@@ -46,15 +46,7 @@ console.log("pussy");
   }
 }
 main();
-mongoose.connection.on('connected', () => {
-  console.log('Mongoose connection established');
 
-  // Do something with the connection
-});
-
-mongoose.connection.on('error', (err) => {
-  console.error('Mongoose connection error:', err);
-});
 
 const  store=MongoStore.create({
 
