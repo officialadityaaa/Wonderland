@@ -38,13 +38,17 @@ const flash=require("connect-flash");
 app.use(flash());
 async function main() {
   try {
-    await mongoose.connect(process.env.atlaslink);
-console.log("pussy");
+    await mongoose.connect(process.env.atlaslink, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      retryWrites: true, // Add this line with a value (e.g., true or false)
+    });
+
     // Other code that depends on the successful connection
   } catch (error) {
     console.error('Error connecting to the database:', error);
   }
-}
+}}
 main();
 
 
