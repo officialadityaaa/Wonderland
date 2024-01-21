@@ -3,7 +3,7 @@ if(process.env.NODE_ENV!="production"){
 require('dotenv').config();
 // then we can acces anywhefa-rotate
 } 
-
+const port=process.env.PORT || 4000;
 const express = require("express");
 
 const app = express();
@@ -190,6 +190,6 @@ app.use((err,req,res,next)=>{
   
 })
 
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log("server working");
 });
