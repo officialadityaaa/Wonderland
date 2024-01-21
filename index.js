@@ -3,7 +3,7 @@ if(process.env.NODE_ENV!="production"){
 require('dotenv').config();
 // then we can acces anywhefa-rotate}
 } 
-console.log(process.env.KEY);
+
 const express = require("express");
 
 const app = express();
